@@ -1,14 +1,472 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Times, serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  /* padding: 0 35px; */
+  /* background: rgb(241, 245, 247); */
+  background: #fff;
 }
+
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  background: rgb(49, 48, 48);
+  color: #fff;
+}
+
+main {
+  /* padding: 20px 45px; */
+  /* max-width: 1100px; */
+  /* margin: 0 auto; */
+}
+
+.body-container {
+  max-width: 1100px;
+  padding: 20px 45px;
+  margin: 0 auto;
+  min-height: 100vh;;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-page-brand {
+  text-align: center;
+  height: 30vh;
+  /* background: chocolate; */
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(98, 97, 97, 0.185);
+  margin: 2em 0;
+  position: relative;
+}
+
+.home-page-brand div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home-page-brand div p {
+  margin: 10px 0;
+}
+
+/* ============================================
+              General
+=============================================== */
+.main-topic {
+  text-align: center;
+  margin: 20px auto 40px;
+  text-transform: capitalize;
+}
+
+.home-page-container {
+  /* border: 2px solid orangered; */
+  min-height: 100vh;
+}
+
+/* .home-page-container {
+  margin: 30px;
+  padding: 50px;
+  border: 2px solid orangered;
+  height: 100vh;
+} */
+
+
+/* ============================================
+              Main-nav
+=============================================== */
+
+.main-nav {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.main-nav a {
+  font-size: .95em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 1em;
+  transition: .2s;
+}
+
+.main-nav a:hover,
+.main-nav .active {
+  color: #fff;
+  background: #AD6A6C;
+}
+
+.myActiveClass {
+  background: #AD6A6C;
+}
+
+.main-nav__home a {
+  color: rgb(204, 146, 148);
+}
+
+/* ============================================
+              Category-img
+=============================================== */
+.category-menu-bar ul {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+  grid-template-rows: repeat( auto-fit, minmax(200px, 1fr) );
+  grid-gap: 20px;
+}
+
+.category-menu-bar ul li {
+  /* border: 3px solid rgb(150, 185, 174); */
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  border-radius: 1%;
+  overflow: hidden;
+}
+
+.category-menu-bar ul li img {
+  transition: transform .5s ease-in-out; /* cubic-bezier(.7,-0.39,.31,1.38) */
+  transform-origin: 0 0;
+}
+
+.category-menu-bar ul li img:hover {
+  transform: scale(1.15);
+  opacity: 0.90;
+}
+
+.category-name {
+  position: absolute;
+  /* top: 50%; */
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1.4em;
+  color: rgb(255, 255, 255);
+  width: 101%;
+  line-height: 1.5em;
+  /* padding: 8px 20px; */
+  background: rgba(65, 63, 63, 0.582);
+}
+
+/* ============================================
+              Blog-nav
+=============================================== */
+.blog-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.blog-nav li {
+  display: inline-block;
+  margin: 0.6em 0;
+}
+.blog-nav li + li {
+  margin-left: .6em;
+}
+.blog-nav a {
+  font-size: .85em;
+  color: #7d7d7d;
+  padding: .2em .8em;
+  border-radius: .25em;
+  background: #eaebeb;
+  transition: .2s;
+}
+.blog-nav a:hover,
+.blog-nav a.active {
+  color: #fff;
+  background: rgb(218, 120, 125);
+}
+
+/* ==================== All Posts Container ============================= */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(240px, 290px) );
+  grid-gap: 20px;
+  justify-content: start;
+  justify-items: center;
+  align-items: center;
+}
+
+.posts-container li {
+  margin: 20px 0;
+  border-radius: 1%;
+  box-shadow: 0px 0px 10px 1px rgba(126, 136, 134, 0.719);
+  background: rgba(221, 245, 240, 0.198);
+}
+
+.posts-container li img {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.posts-container li .post-info {
+  padding: 10px 1.7em;
+}
+
+.post-info h3 {
+  font-size: 1.4em;
+  line-height: 1.65em;
+}
+
+.interaction-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: rgba(146, 153, 168, 0.212);
+  color: rgb(70, 77, 95);
+  font-size: 0.85em;
+  padding: 8px;
+}
+
+/* ================================================
+              DetailPost Component
+=================================================== */
+.detail-post-container {
+  /* border-top: 1px solid black; */
+  margin-top: 30px;
+  border-radius: 1%;
+  box-shadow: 0px 0px 10px 1px rgba(126, 136, 134, 0.719);
+  background: rgba(221, 245, 240, 0.089);
+}
+
+.back-btn {
+  /* border: 1px solid orangered; */
+  background: #eaebeb;
+  color: #7d7d7d;
+  font-size: 1em;
+  display: inline-block;
+  margin: 1.7rem;
+  padding: .15em 1.2em;
+  border-radius: .25em;
+  transition: .2s;
+}
+
+.detail-post {
+  padding: 10px 1.7em;
+}
+
+.detail-post h1 {
+  text-align: center;
+  margin-bottom: 14px;
+  text-transform: capitalize;
+}
+
+.detail-post p {
+  margin-bottom: 12px;
+}
+
+.detail-post .delete-btn {
+  /* visibility: hidden; */
+  cursor: pointer;
+  font-size: 1em;
+  padding: .15em 1.2em;
+  border-radius: .25em;
+  display: block;
+  margin: 2.5em 1.7rem 1.5em auto;
+  outline: none;
+  border: none;
+  background: #eaebeb;
+  color: #7d7d7d;
+}
+
+.back-btn:hover, .delete-btn:hover {
+  color: #fff;
+  background: rgb(218, 120, 125);
+}
+
+/* .detail-post:hover button {
+  visibility: visible;
+} */
+
+/* ============================================
+              Add New Post
+=============================================== */
+.new-post-container form {
+  padding: 40px 60px;
+  border-radius: 1%;
+  box-shadow: 0px 0px 10px 1px rgba(126, 136, 134, 0.719);
+  background: rgba(221, 245, 240, 0.089);
+}
+
+.new-post-container form label {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.new-post-container input[type="text"] {
+  width: 15rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  color: rgb(161, 50, 50);
+}
+
+.new-post-container textarea, .display-block {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.new-post-container select, option {
+  color: rgb(161, 50, 50);
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
+.new-post-container textarea {
+  width: 100%;
+  padding: 10px;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  color: rgb(161, 50, 50);
+}
+
+.save-btn, .cancel-btn {
+  display: inline-block;
+  font-size: 14px;
+  padding: 4px 20px;
+  cursor: pointer;
+  margin-right: 15px;
+  width: 5.5rem;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+}
+
+.save-btn:hover {
+  background-color: rgb(0, 80, 80);
+  color: #fff;
+  opacity: 0.8;
+}
+
+.cancel-btn:hover {
+  background-color: rgb(163, 27, 27);
+  color: #fff;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px 30px;
+  }
+}
+
+@media (min-width: 518px) {
+    /* MAIN NAV -------- */
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 70px;
+    }
+    .main-nav a {
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      padding: 1.25em 1.5em;
+    }
+    .main-nav a:hover {
+      border-color: rgba(0,0,0, .1);
+    }
+}
+
+@media (min-width: 769px) {
+  main {
+    /* padding: 20px 70px; */
+  }
+
+  .body-container {
+    padding: 20px 70px;
+  }
+
+  header {
+    padding: 0;
+  }
+}
+
+/* ============================================
+              Footer
+=============================================== */
+footer {
+  text-align: center;
+  margin: 100px 0 0px;
+  padding: 15px 0;
+  background: rgba(124, 121, 121, 0.13); 
+  color: rgb(85, 81, 81);
+}
+
+.footer__socialmedia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.footer__socialmedia li {
+  display: block;
+  font-size: 1.7rem;
+  padding: 0 0.7rem;
+}
+
+.footer__socialmedia .fab:hover {
+  color: rgb(196, 101, 105); 
+}
+
+.relative-position {
+  position: relative;
+}
+
+.absolute-position {
+  position: absolute;
+  top: -30px;
+  left: 150%;
+  transform: translateX(-50%);
+  padding: 0 20px;
+  font-size: small;
+  padding: 5px 8px;
+  background: rgb(201, 199, 199);
+  border-radius: 4px;
+}
+
+.fab .media {
+  visibility: hidden;
+}
+
+.media::after{
+  position: absolute;
+  left: 0;
+  bottom: -7px;  /* the size of value depends on border width size (below) */
+  content: '';    /* affect the content to show up */
+  border-color: transparent transparent transparent rgb(201, 199, 199);
+  border-style: solid;
+  border-width: 0px 10px 10px 10px;
+  height: 0px;
+  width: 0px;
+}
+
+.fab:hover > .media {
+  visibility: visible;
+  color: rgb(85, 81, 81);
+}
+/* 
+.goingup-arrow {
+  position: fixed;
+  bottom: 33px;
+  right: 36px;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+} */
