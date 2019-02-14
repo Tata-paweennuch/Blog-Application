@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Live version at [https://Tata-paweennuch.github.io/Blog-Application/](https://Tata-paweennuch.github.io/Blog-Application/)
+
 ## Available Scripts
 
 In the project directory, you can run:
