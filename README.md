@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live version at [https://Tata-paweennuch.github.io/Blog-Application/](https://Tata-paweennuch.github.io/Blog-Application/)
+Live version at [https://immense-shore-38342.herokuapp.com/](https://immense-shore-38342.herokuapp.com/)
 
 ## Available Scripts
 
