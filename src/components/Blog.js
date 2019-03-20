@@ -12,10 +12,6 @@ class Blog extends Component {
     match: PropTypes.object.isRequired
   };
 
-  state = {
-    post: []
-  };
-
   createBlogForEachCategory = () => {
     let categories = [];
     this.props.data.forEach(post => {
